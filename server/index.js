@@ -1,14 +1,15 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const Router = require("./routes");
-
-const PORT = 3000;
+import mongoose from "mongoose";
+import express from 'express';
+import { router } from "./routes.js";
+import Configuration from './Configuration.js';
 
 const app = express();
 
-app.use(express.json())
+app.use(express.json());
 
-mongoose.connect('mongodb+srv://dana:8489958@mycluster.rvwy5hc.mongodb.net/test',
+const {MONGO_USER_NAME, MONGO_PASSWORD, MONGO_CLUSTER, MONGO_DB_NAME} = Configuration;
+
+mongoose.connect(`mongodb+srv://${MONGO_USER_NAME}:${MONGO_PASSWORD}@${MONGO_CLUSTER}.rvwy5hc.mongodb.net/${MONGO_DB_NAME}`,
   {
     useNewUrlParser: true,
     // useFindAndModify: false,
@@ -22,8 +23,8 @@ db.once("open", function () {
   console.log("Connected successfully");
 });
 
-app.use(Router);
+app.use('/', router);
 
-app.listen(PORT, () => {
-  console.log(`Server listening on ${PORT}`);
+app.listen(Configuration.port, () => {
+  console.log(`Server listening on ${Configuration.port}`);
 });

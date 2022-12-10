@@ -1,9 +1,8 @@
-const express = require("express");
-const userModel = require("./models");
-const app = express();
+import express from 'express';
+import userModel from "./models.js";
+var router = express.Router();
 
-
-app.post("/add_user", async (request, response) => {
+router.post("/add_user", async (request, response) => {
     const user = new userModel(request.body);
   
     try {
@@ -14,7 +13,7 @@ app.post("/add_user", async (request, response) => {
     }
 });
 
-app.get("/users", async (request, response) => {
+router.get("/users", async (request, response) => {
     const users = await userModel.find({});
   
     try {
@@ -22,6 +21,6 @@ app.get("/users", async (request, response) => {
     } catch (error) {
       response.status(500).send(error);
     }
-  });
+});
 
-module.exports = app;
+export {router};
