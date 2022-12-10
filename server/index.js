@@ -12,7 +12,6 @@ const {MONGO_USER_NAME, MONGO_PASSWORD, MONGO_CLUSTER, MONGO_DB_NAME} = Configur
 mongoose.connect(`mongodb+srv://${MONGO_USER_NAME}:${MONGO_PASSWORD}@${MONGO_CLUSTER}.rvwy5hc.mongodb.net/${MONGO_DB_NAME}`,
   {
     useNewUrlParser: true,
-    // useFindAndModify: false,
     useUnifiedTopology: true
   }
 );
