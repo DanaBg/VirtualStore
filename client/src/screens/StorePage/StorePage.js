@@ -16,11 +16,16 @@ const StorePage = () =>{
             {
                 products &&
                 <>
-                <div className="StoreTitle">Danikole Store</div>
-                { 
-                    products.map(product => 
-                    <ProductRow product={product} key={product._id}/>
-                )}
+                    <div className="headerContainer">
+                        <div className="StoreTitle">Danikole Store</div>
+                        <div className="cartButton">
+                            <i className="fa fa-shopping-cart"></i>
+                        </div>
+                    </div>
+                    { 
+                        products.map(product => 
+                        <ProductRow product={product} key={product.id}/>
+                    )}
                 </>
 
             }

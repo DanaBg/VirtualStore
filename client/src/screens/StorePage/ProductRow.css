@@ -4,6 +4,7 @@
     transition: 0.3s;
     justify-content: space-around;
     align-items: center;
+    margin-bottom: 10px;
 }
 
 img {

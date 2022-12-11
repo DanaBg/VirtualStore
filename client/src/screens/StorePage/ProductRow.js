@@ -2,7 +2,7 @@ import React from "react";
 import './ProductRow.css';
 
 const ProductRow = (props) => {
-    const {name, price, description, imgUrl} = props.product;
+    const {id, name, price, description, imgUrl} = props.product;
     return (
         <div className="rowContainer">
             <div className="name">{name}</div>
