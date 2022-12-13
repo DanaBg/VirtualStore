@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const Configuration = {
-    port: process.env.port || 3000,
+    port: process.env.port || 4000,
     MONGO_USER_NAME: process.env.MONGO_USER_NAME,
     MONGO_PASSWORD: process.env.MONGO_PASSWORD,
     MONGO_CLUSTER: process.env.MONGO_CLUSTER,
