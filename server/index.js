@@ -2,10 +2,12 @@ import mongoose from "mongoose";
 import express from 'express';
 import { router } from "./routes.js";
 import Configuration from './Configuration.js';
+import cors from 'cors';
 
 const app = express();
 
 app.use(express.json());
+app.use(cors())
 
 const {MONGO_USER_NAME, MONGO_PASSWORD, MONGO_CLUSTER, MONGO_DB_NAME} = Configuration;
 
