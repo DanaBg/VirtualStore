@@ -12,10 +12,6 @@ const CartItem = new mongoose.Schema({
   });
 
 const CartSchema = new mongoose.Schema({
-  id: {
-    type: Number,
-    required: true
-  },
   items: {
     type: [CartItem],
     required:true,
