@@ -7,10 +7,9 @@ import StorePage from './screens/StorePage/StorePage.js';
 const App = () => {
     return (
         <BrowserRouter>
-            <Switch>
-                <Route path='/'><StorePage/></Route>
-                <Route path='shopping-cart'><ShoppingCart/></Route>
-            </Switch>
+            <Routes>
+                <Route path='/' element={<StorePage/>}/>
+            </Routes>
         </BrowserRouter>
     )
 }
