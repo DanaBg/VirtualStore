@@ -5,7 +5,7 @@ import cors from 'cors';
 
 var router = express.Router();
 
-router.post("/add_product", async (request, response) => {
+router.post("/add-product", async (request, response) => {
     const product = new productModel(request.body);
   
     try {
@@ -16,7 +16,7 @@ router.post("/add_product", async (request, response) => {
     }
 });
 
-router.post("/add-cart", async (request, response) => {
+router.post("/add-cart",cors(), async (request, response) => {
    const cart = new CartModel(request.body);
 
    try {
